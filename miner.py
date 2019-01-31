@@ -206,7 +206,7 @@ try:
     with open(log_path, "w") as log:
         log.writelines("")
     with open(log_path, "a") as log:
-        log.writelines("\nFound " + str(len(pair_rules)) + " pair rules from " + str(len(pairs)) + " frequent pairs:\n")
+        log.writelines("Found " + str(len(pair_rules)) + " pair rules from " + str(len(pairs)) + " frequent pairs:\n")
         for rule in pair_rules:
             log.writelines(str(rule) + "\n")
 
@@ -214,15 +214,15 @@ try:
         for rule in triple_rules:
             log.writelines(str(rule) + "\n")
 
-        log.writelines("Found " + str(len(singles)) + " frequent singles:\n")
+        log.writelines("\nFound " + str(len(singles)) + " frequent singles:\n")
         for itemset in sorted(list(singles)):
             log.writelines(itemset + ": " + str(singles[itemset]) + "\n")
 
-        log.writelines("Found " + str(len(pairs)) + " frequent pairs:\n")
+        log.writelines("\nFound " + str(len(pairs)) + " frequent pairs:\n")
         for itemset in sorted(list(pairs)):
             log.writelines(itemset + ": " + str(pairs[itemset]) + "\n")
 
-        log.writelines("Found " + str(len(triples)) + " frequent triples:\n")
+        log.writelines("\nFound " + str(len(triples)) + " frequent triples:\n")
         for itemset in sorted(list(triples)):
             log.writelines(itemset + ": " + str(triples[itemset]) + "\n")
 
