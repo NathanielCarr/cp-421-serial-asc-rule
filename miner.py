@@ -216,15 +216,15 @@ try:
 
         log.writelines("\nFound " + str(len(singles)) + " frequent singles:\n")
         for itemset in sorted(list(singles)):
-            log.writelines(itemset + ": " + str(singles[itemset]) + "\n")
+            log.writelines("{" + ", ".join(itemset.split()) + "}: " + str(singles[itemset]) + "\n")
 
         log.writelines("\nFound " + str(len(pairs)) + " frequent pairs:\n")
         for itemset in sorted(list(pairs)):
-            log.writelines(itemset + ": " + str(pairs[itemset]) + "\n")
+            log.writelines("{" + ", ".join(itemset.split()) + "}: " + str(pairs[itemset]) + "\n")
 
         log.writelines("\nFound " + str(len(triples)) + " frequent triples:\n")
         for itemset in sorted(list(triples)):
-            log.writelines(itemset + ": " + str(triples[itemset]) + "\n")
+            log.writelines("{" + ", ".join(itemset.split()) + "}: " + str(triples[itemset]) + "\n")
 
     print("\nRule discovery completed in " + "{0:.2f}".format(time.time() - start_time) + " seconds. Check the selected logging file for details.")
 
